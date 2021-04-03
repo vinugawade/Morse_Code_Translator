@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>JavaScript Project</title>
+</head>
+
+<body style="background-color:rgb(132, 140, 255);">
+    <header>
+        <h2 class="text-center my-4" style="font-weight: bold; font-size:3rem;">Morse Code Translater</h2>
+    </header>
+    <main>
+        <div class="container-fluid">
+            <div class="mx-auto" style="width: auto;">
+                <div class="card-deck py-5">
+                    <!-- ENCODER FORM DIV -->
+                    <div class="card" name="encoder">
+                        <div class="card-header">
+                            <h3 class="text-center">Encoder</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <input pattern="[a-zA-Z0-9 -]+" type="text" id="Input-String-Value" class="form-control my-4" name="encoder-input-string" placeholder="Input String Value">
+                                <label for="encoder-output-string">Output Morse Code: ("|" Indicates the Spacing In Morse Code.)</label>
+                                <p id="Output-Encrypted-Value" name="encoder-output-string"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" id="Encform" class="btn btn-primary">Encode</button>
+                        </div>
+                    </div>
+                    <!-- ENCODER FORM DIV -->
+
+
+                    <!-- DECODER FORM DIV -->
+                    <div class="card" name="decoder ">
+                        <div class="card-header ">
+                            <h3 class="text-center ">Decoder</h3>
+                        </div>
+                        <div class="card-body ">
+                            <div class="form-group ">
+                                <input type="text" pattern="[. -]+" class="form-control my-4" id="Input-Morse-Code" name="decoder-input-string " placeholder="Input Morse Code">
+                                <label for="encoder-output-string">Output String Value: (Add "|" for the Spacing In String.)</label>
+                                <p id="Output-Decrypted-String" name="decoder-output-string"></p>
+                            </div>
+                        </div>
+                        <div class="card-footer ">
+                            <button type="button" id="Decform" class="btn btn-primary">Decode</button>
+                        </div>
+                    </div>
+                    <!-- DECODER FORM DIV -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="text-center p-5"><strong>👨‍💻Development By TYCO Project Group R.N:1-3-6👨‍💻</strong></p>
+    </footer>
+</body>
+<script type="text/javascript" src="Script.js" charset="utf-8"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js " integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js " integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV " crossorigin="anonymous "></script>
+
+</html>

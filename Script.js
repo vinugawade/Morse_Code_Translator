@@ -1,4 +1,4 @@
-var Alphabets = {
+const Alphabets = {
     " ": "|",
     A: ".-",
     B: "-...",
@@ -37,66 +37,57 @@ var Alphabets = {
     9: "----.",
     0: "-----",
 };
-// CLEAR OUTPUT
-document.getElementById("Input-String-Value").addEventListener("focusin", function() {
+
+// Clear output
+
+// Event listener for clearing the encrypted value output when the input field is focused
+document.getElementById("Input-String-Value").addEventListener("focusin", function () {
     document.getElementById('Output-Encrypted-Value').innerHTML = '';
 });
 
-document.getElementById("Input-Morse-Code").addEventListener("focusin", function() {
+// Event listener for clearing the decrypted string output when the input field is focused
+document.getElementById("Input-Morse-Code").addEventListener("focusin", function () {
     document.getElementById('Output-Decrypted-String').innerHTML = '';
 });
-// ENCRYPTION FUNCTION CODE
 
-// TODO:try Catch Blocks
-document.getElementById("Encform").addEventListener("click", function() {
-    // TODO:For In Loop
-    var InputStringValue = document.getElementById("Input-String-Value").value.toUpperCase();
+// Encryption function code
+document.getElementById("Encform").addEventListener("click", function () {
+    const InputStringValue = document.getElementById("Input-String-Value").value.toUpperCase();
 
-    InputStringValue.split("");
-
-    for (var IndexVal = 0; IndexVal < InputStringValue.length; IndexVal++) {
-
-        document.getElementById("Output-Encrypted-Value").innerHTML += Alphabets[InputStringValue[IndexVal]] + " ";
-
-    }
-
+    // Splitting the input string into an array of characters
+    InputStringValue.split("").forEach((letter) => {
+        // Building the encrypted Morse code by appending each corresponding code for the character
+        document.getElementById("Output-Encrypted-Value").innerHTML += Alphabets[letter] + " ";
+    });
 });
 
+// Decryption function code
+document.getElementById("Decform").addEventListener("click", function () {
+    let StartCountIndex = 0;
+    const InputMorseCode = document.getElementById("Input-Morse-Code").value.toString() + " ";
 
-// ENCRYPTION FUNCTION CODE
-
-
-// DECRYPTION FUNCTION CODE
-document.getElementById("Decform").addEventListener("click", function() {
-    var StartCountIndex = 0,
-        InputMorseCode = document.getElementById("Input-Morse-Code").value.toString() + " ";
-    // try {
-    for (var IndexVal = 0; IndexVal <= InputMorseCode.length; IndexVal++) {
+    for (let IndexVal = 0; IndexVal <= InputMorseCode.length; IndexVal++) {
         if (InputMorseCode[IndexVal] === " ") {
-
-            var index = IndexVal;
-            var MorseCode = InputMorseCode.slice(StartCountIndex, index);
+            // Extracting each Morse code from the input using space as a delimiter
+            const index = IndexVal;
+            const MorseCode = InputMorseCode.slice(StartCountIndex, index);
             StartCountIndex = ++index;
 
-            document.getElementById("Output-Decrypted-String").innerHTML += FindKey(Alphabets, MorseCode) != undefined ? FindKey(Alphabets, MorseCode) : alert("Some Mistakes In Your Morse Code...");
-            // document.getElementById('Output-Decrypted-String').innerHTML = '';
+            // Finding the corresponding character for the Morse code and appending it to the decrypted string output
+            document.getElementById("Output-Decrypted-String").innerHTML += FindKey(Alphabets, MorseCode) != undefined ? FindKey(Alphabets, MorseCode) : alert("Some mistakes in your Morse code...");
         }
     }
-    // } catch (e) {
-    //     alert("Some Mistakes In Your Morse Code...");
-
-    // }
 });
-// DECRYPTION FUNCTION CODE
 
-// GET DATA FROM ARRAY [Alphabets]
+// Get data from array [Alphabets]
+// Function to find the corresponding character for a given Morse code in the Alphabets object
 function FindKey(Alphabets, Value) {
-    for (var Keys in Alphabets) {
+    for (let Keys in Alphabets) {
         if (Alphabets.hasOwnProperty(Keys)) {
             if (Alphabets[Keys] === Value) {
+                // Returning the lowercase character to match the input format
                 return Keys.toLowerCase();
             }
         }
     }
 }
-// GET DATA FROM ARRAY

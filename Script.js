@@ -69,7 +69,7 @@ document.getElementById("Decform").addEventListener("click", function () {
     for (let IndexVal = 0; IndexVal <= InputMorseCode.length; IndexVal++) {
         if (InputMorseCode[IndexVal] === " ") {
             // Extracting each Morse code from the input using space as a delimiter
-            const index = IndexVal;
+            var index = IndexVal;
             const MorseCode = InputMorseCode.slice(StartCountIndex, index);
             StartCountIndex = ++index;
 

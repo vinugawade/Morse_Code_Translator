@@ -53,17 +53,20 @@ document.getElementById("Input-Morse-Code").addEventListener("focusin", function
 // Encryption function code
 document.getElementById("Encform").addEventListener("click", function () {
     const InputStringValue = document.getElementById("Input-String-Value").value.toUpperCase();
+    let OutputSentence = "";
 
     // Splitting the input string into an array of characters
     InputStringValue.split("").forEach((letter) => {
         // Building the encrypted Morse code by appending each corresponding code for the character
-        document.getElementById("Output-Encrypted-Value").innerHTML += Alphabets[letter] + " ";
+        OutputSentence += Alphabets[letter] + " ";
     });
+    document.getElementById("Output-Encrypted-Value").innerHTML = OutputSentence;
 });
 
 // Decryption function code
 document.getElementById("Decform").addEventListener("click", function () {
     let StartCountIndex = 0;
+    let OutputSentence = "";
     const InputMorseCode = document.getElementById("Input-Morse-Code").value.toString() + " ";
 
     for (let IndexVal = 0; IndexVal <= InputMorseCode.length; IndexVal++) {
@@ -74,9 +77,10 @@ document.getElementById("Decform").addEventListener("click", function () {
             StartCountIndex = ++index;
 
             // Finding the corresponding character for the Morse code and appending it to the decrypted string output
-            document.getElementById("Output-Decrypted-String").innerHTML += FindKey(Alphabets, MorseCode) != undefined ? FindKey(Alphabets, MorseCode) : alert("Some mistakes in your Morse code...");
+            OutputSentence += FindKey(Alphabets, MorseCode) != undefined ? FindKey(Alphabets, MorseCode) : alert("Some mistakes in your Morse code...");
         }
     }
+    document.getElementById("Output-Decrypted-String").innerHTML = OutputSentence;
 });
 
 // Get data from array [Alphabets]

@@ -1,0 +1,53 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-image: url('https://i.pinimg.com/originals/18/91/7d/18917daf305de90a97aa2707f4cc34eb.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+   
+}
+.text-center.my-4{
+    font-weight: bold; 
+    font-size: 3rem; 
+    color:rgb(93, 179, 255);
+    transition: transform 0.3s ease-in-out;
+   
+}
+.text-center.my-4:hover{
+    
+    transform: scale(1.2);
+    text-decoration: 2px underline;
+}
+.card-header .text-center{
+    color: rgb(201, 221, 239);
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration:  1.5px underline;
+}
+
+.card{
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.01);
+}
+.form-group{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    color: aliceblue;
+    
+}
+ .btn-primary{
+    border-radius: 2rem;
+    transition: transform 0.2s ease-in;
+}
+.btn-primary:hover{
+    transform: scale(1.1);
+}
+.card{
+    background-color: rgb(11, 11, 53);
+}
